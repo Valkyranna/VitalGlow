@@ -1,0 +1,210 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'Author Light';
+  src: url('/fonts/Author-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 255, 255, 255;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+  font-family: 'Inter', sans-serif;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* Custom animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes zoomIn {
+  from {
+    transform: scale(0.95);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Leica-style typography */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Helvetica Neue', 'Inter', sans-serif;
+  font-weight: 300;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+
+h1 {
+  font-size: 3.5rem;
+  font-weight: 200;
+  letter-spacing: -0.04em;
+}
+
+h2 {
+  font-size: 2.5rem;
+  font-weight: 300;
+  letter-spacing: -0.03em;
+}
+
+h3 {
+  font-size: 1.875rem;
+  font-weight: 300;
+  letter-spacing: -0.02em;
+}
+
+/* Body text */
+body {
+  font-family: 'Helvetica Neue', 'Inter', sans-serif;
+  font-weight: 300;
+  line-height: 1.6;
+  letter-spacing: 0.01em;
+}
+
+/* Button styles matching Leica */
+.btn-primary {
+  @apply bg-leica-black text-white px-12 py-4 tracking-widest text-xs font-light hover:bg-gray-900 transition-colors duration-300 uppercase;
+}
+
+.btn-secondary {
+  @apply bg-white text-leica-black border border-leica-black px-12 py-4 tracking-widest text-xs font-light hover:bg-leica-black hover:text-white transition-colors duration-300 uppercase;
+}
+
+.btn-outline {
+  @apply bg-transparent text-leica-black border border-leica-black px-12 py-4 tracking-widest text-xs font-light hover:bg-leica-black hover:text-white transition-colors duration-300 uppercase;
+}
+
+/* Product card hover effects - more subtle like Leica */
+.product-card {
+  @apply transition-all duration-500 ease-out;
+}
+
+.product-card:hover {
+  @apply transform translate-y-2;
+}
+
+.product-card:hover .product-overlay {
+  @apply opacity-100;
+}
+
+.product-overlay {
+  @apply absolute inset-0 bg-white bg-opacity-5 opacity-0 transition-opacity duration-500;
+}
+
+/* Navigation styles - cleaner like Leica */
+.nav-link {
+  @apply text-leica-black text-xs font-light tracking-widest hover:text-vital-green transition-colors duration-300 uppercase;
+}
+
+/* Cart drawer styles - cleaner */
+.cart-drawer {
+  @apply fixed right-0 top-0 h-full w-full md:w-96 bg-white shadow-2xl transform translate-x-full transition-transform duration-500 ease-out z-50;
+}
+
+.cart-drawer.open {
+  @apply translate-x-0;
+}
+
+/* Image gallery styles - more elegant */
+.image-gallery {
+  @apply relative overflow-hidden bg-gray-50;
+}
+
+.image-gallery img {
+  @apply transition-transform duration-700 ease-out;
+}
+
+.image-gallery:hover img {
+  @apply transform scale-105;
+}
+
+/* Responsive spacing - more generous like Leica */
+.section-padding {
+  @apply py-24 md:py-32 lg:py-48;
+}
+
+.container-padding {
+  @apply px-8 md:px-16 lg:px-32;
+}
+
+/* Leica-style grid */
+.leica-grid {
+  @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12 lg:gap-16;
+}
+
+/* Leica-style product price */
+.leica-price {
+  @apply text-leica-black text-lg font-light tracking-wide;
+}
+
+/* Leica-style category label */
+.leica-category {
+  @apply text-xs font-light tracking-widest uppercase text-leica-gray-dark mb-4;
+}
+
+/* Leica-style section title */
+.leica-section-title {
+  @apply text-3xl md:text-4xl lg:text-5xl font-light tracking-tight text-leica-black mb-8 text-center;
+}
+
+/* Leica-style text link */
+.leica-link {
+  @apply text-leica-black text-xs font-light tracking-widest uppercase hover:text-vital-green transition-colors duration-300 underline decoration-1 underline-offset-4;
+}
