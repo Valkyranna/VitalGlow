@@ -53,7 +53,7 @@ const Header: React.FC = () => {
           <div className="flex items-center justify-between h-20">
             {/* Logo */}
             <Link href="/" className="flex items-center">
-              <h1 className={`text-3xl font-author tracking-tight transition-colors duration-300 ${isScrolled || !isHomePage ? 'text-leica-black' : 'text-white'}`}>
+              <h1 className={`text-3xl author-light-font tracking-tight transition-colors duration-300 ${isScrolled || !isHomePage ? 'text-leica-black' : 'text-white'}`}>
                 Vital Glow
               </h1>
             </Link>
@@ -63,7 +63,7 @@ const Header: React.FC = () => {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className={`hover:text-vital-green text-lg font-author transition-all duration-200 ${isScrolled || !isHomePage ? 'text-leica-black' : 'text-white'}`}
+                  className={`hover:text-vital-green text-lg author-light-font transition-all duration-200 ${isScrolled || !isHomePage ? 'text-leica-black' : 'text-white'}`}
                 >
                   {link.label}
                 </Link>

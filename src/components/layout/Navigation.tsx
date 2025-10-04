@@ -42,7 +42,7 @@ const Navigation: React.FC = () => {
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-leica-black hover:text-vital-green px-3 py-2 text-sm font-author transition-colors duration-200"
+                className="text-leica-black hover:text-vital-green px-3 py-2 text-sm author-light-font transition-colors duration-200"
               >
                 {link.label}
               </Link>

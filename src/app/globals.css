@@ -12,6 +12,11 @@
   font-display: swap;
 }
 
+/* Ensure font loads properly */
+.author-light-font {
+  font-family: 'Author Light', serif !important;
+}
+
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 255, 255, 255;
