@@ -1,6 +1,3 @@
-'use client';
-
-import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { AnimatedWrapper } from '@/components/ui/AnimatedWrapper';
@@ -209,6 +206,17 @@ const getBlogPost = (id: string): BlogPost | null => {
   
   return posts[id] || null;
 };
+
+export async function generateStaticParams() {
+  // Generate static pages for all blog posts
+  return [
+    { id: '1' },
+    { id: '2' },
+    { id: '3' },
+    { id: '4' },
+    { id: '5' }
+  ];
+}
 
 export default function BlogPostPage({ params }: { params: { id: string } }) {
   const post = getBlogPost(params.id);
