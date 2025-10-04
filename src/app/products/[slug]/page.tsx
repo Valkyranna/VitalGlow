@@ -12,6 +12,15 @@ interface ProductPageProps {
   };
 }
 
+export async function generateStaticParams() {
+  // Import products data to generate static paths
+  const { products } = await import('@/data/products');
+
+  return products.map((product) => ({
+    slug: product.slug,
+  }));
+}
+
 export default function ProductPage({ params }: ProductPageProps) {
   const product = getProductBySlug(params.slug);
 
