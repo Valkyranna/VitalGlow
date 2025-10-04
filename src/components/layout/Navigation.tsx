@@ -33,7 +33,7 @@ const Navigation: React.FC = () => {
   ];
 
   return (
-    <nav className={`${navClasses} font-sans`}>
+    <nav className={`${navClasses}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-end h-16">
           {/* Desktop Navigation */}
@@ -42,7 +42,7 @@ const Navigation: React.FC = () => {
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-leica-black hover:text-vital-green px-3 py-2 text-sm font-normal transition-colors duration-200"
+                className="text-leica-black hover:text-vital-green px-3 py-2 text-sm font-author transition-colors duration-200"
               >
                 {link.label}
               </Link>
