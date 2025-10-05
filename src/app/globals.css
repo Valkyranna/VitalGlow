@@ -12,9 +12,10 @@
   font-display: swap;
 }
 
-/* Author Light font class */
+/* Fallback for when fonts don't load */
 .author-light-font {
-  font-family: 'Author Light', serif !important;
+  font-family: 'Author Light', 'Times New Roman', 'Georgia', serif !important;
+  font-weight: 300;
 }
 
 :root {
